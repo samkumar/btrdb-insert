@@ -21,7 +21,7 @@ func main() {
 
     ctx := context.Background()
 
-    btrdbconn, err := btrdb.Connect(ctx, "compound-0.cs.berkeley.edu:4410")
+    btrdbconn, err := btrdb.Connect(ctx, btrdb.EndpointsFromEnv()...)
     if err != nil {
         panic(err)
     }
